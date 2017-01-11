@@ -1,2 +1,8 @@
+// shared
 @import "shared/variables";
-@import "components/components";
+@import "shared/reset";
+@import "shared/base";
+
+// components
+@import "components/button";
+@import "components/table";

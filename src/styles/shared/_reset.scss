@@ -1,0 +1,120 @@
+// reset all the elements' styles by browser
+html,
+body {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+
+    * {
+        outline: none;
+    }
+}
+
+body {
+    margin: 0;
+}
+
+article,
+div,
+aside,
+header,
+footer,
+section,
+nav,
+table,
+figure,
+figcaption,
+main,
+form {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    display: block;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.7em;
+}
+
+h4 {
+    font-size: 1.6em;
+}
+
+h5 {
+    font-size: 1.5em;
+}
+
+h6 {
+    font-size: 1.4em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+button {
+    border: none;
+    background: transparent;
+}
+
+a {
+    background: transparent;
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: Monaco, monospace, monospace;
+    font-size: 1em;
+}
+
+img {
+    border: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: sans-serif;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button,
+input {
+    text-transform: none;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+canvas {
+    display: inline-block;
+}
+
+[hidden] {
+    display: none;
+}

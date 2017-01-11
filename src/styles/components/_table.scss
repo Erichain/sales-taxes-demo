@@ -1,2 +1,13 @@
 // table's styles
-table {}
+table {
+    display: block;
+    width: 100%;
+    border: $border-width solid $border-color;
+    border-collapse: collapse;
+
+    tr {
+        td {
+            border: $border-width solid $border-color;
+        }
+    }
+}
