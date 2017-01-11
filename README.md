@@ -3,6 +3,8 @@ Basic sales taxes calculation.
 
 ## Install
 
+> Requirements: Node >= 6.9, npm 3.x.x
+
 **1. Install dependencies with the command below.**
 
 ``` bash
