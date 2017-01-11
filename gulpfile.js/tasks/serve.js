@@ -5,7 +5,6 @@ const gulpSequence = require('gulp-sequence');
 gulp.task('serve', (cb) => {
     gulpSequence(
         'clean',
-        'vueify',
         'scripts',
         'styles',
         'html',

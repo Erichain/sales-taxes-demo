@@ -1,5 +1,4 @@
-/**
- * @description
- * @author Erichain
- * @date 11/01/2017
- */
+// getters
+export default {
+    goodsData: state => state.goodsData
+};

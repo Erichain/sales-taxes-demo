@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Books",
+        "isImported": false,
+        "price": 12.49,
+        "isTaxed": false,
+        "taxRate": 0
+    }, {
+        "name": "Music CD",
+        "isImported": false,
+        "price": 14.99,
+        "isTaxed": true,
+        "taxRate": 0.1
+    }, {
+        "name": "Chocolate Bar",
+        "isImported": false,
+        "price": 0.85,
+        "isTaxed": true,
+        "taxRate": 0
+    }, {
+        "name": "Imported Box Of Chocolate",
+        "isImported": true,
+        "price": 10,
+        "isTaxed": true,
+        "taxRate": 0.05
+    }, {
+        "name": "Imported Bottle Of Perfume",
+        "isImported": true,
+        "price": 32.19,
+        "isTaxed": true,
+        "taxRate": 0.05
+    }, {
+        "name": "Bottle Of Perfume",
+        "isImported": false,
+        "price": 20.89,
+        "isTaxed": true,
+        "taxRate": 0.1
+    }, {
+        "name": "Packet Of Headache Pills",
+        "isImported": false,
+        "price": 9.75,
+        "isTaxed": false,
+        "taxRate": 0
+    }, {
+        "name": "Box Of Imported Chocolates",
+        "isImported": true,
+        "price": 11.25,
+        "isTaxed": true,
+        "taxRate": 0.05
+    }
+]

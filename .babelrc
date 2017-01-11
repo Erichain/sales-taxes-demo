@@ -1,4 +1,3 @@
 {
-    "presets": ["latest"],
-    "retainLines": true
+    "presets": ["latest", "stage-2"]
 }

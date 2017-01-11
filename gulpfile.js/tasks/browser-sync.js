@@ -10,8 +10,7 @@ const browserSyncTask = () => {
     let watchableTasks = [
         'scripts',
         'html',
-        'styles',
-        'vueify'
+        'styles'
     ];
 
     watchableTasks.forEach((taskName) => {
@@ -20,6 +19,21 @@ const browserSyncTask = () => {
             config.tasks[taskName].src,
             `/**/*.{${config.tasks[taskName].extensions}}`
         );
+
+        if (taskName === 'scripts') {
+            files = [
+                path.join(
+                    config.root,
+                    config.tasks[taskName].src,
+                    `/**/*.{${config.tasks[taskName].extensions}}`
+                ),
+                path.join(
+                    config.root,
+                    config.tasks.vueify.src,
+                    `/**/*.{${config.tasks.vueify.extensions}}`
+                )
+            ];
+        }
 
         let watchTaskName = `watch${taskName[0]
             .toUpperCase()
