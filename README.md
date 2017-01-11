@@ -3,13 +3,13 @@ Basic sales taxes calculation.
 
 ## Install
 
-1. Installing dependencies with the command below.
+**1. Install dependencies with the command below.**
 
 ``` bash
 yarn install
 ```
 
-2. Open within browser with the command below.
+**2. Open within browser with the command below.**
 
 ``` bash
 npm run dev
