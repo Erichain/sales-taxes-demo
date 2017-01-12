@@ -38,6 +38,10 @@ export default {
     [mutationTypes.UPDATE_GOODS_COUNT_ENTERED](state, { count, goods }) {
         state.goodsCounts[goods.goodsId] = count;
         goods.count = count;
+        if (state.cartGoods.indexOf(goods) > -1) {
+            return;
+        }
+        state.cartGoods.push(goods);
     },
 
     [mutationTypes.CLEAR_CART](state) {

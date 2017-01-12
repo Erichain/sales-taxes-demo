@@ -86,7 +86,7 @@
                 let instance = this;
                 setTimeout(function () {
                     instance.updateGoodsCountEntered({
-                        count: event.target.value,
+                        count: parseInt(event.target.value || 0, 10),
                         goods
                     });
                 }, 500);
