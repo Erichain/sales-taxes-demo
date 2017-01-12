@@ -4615,6 +4615,10 @@ vue-hot-reload-api@^2.0.1:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.0.7.tgz#45bd46cfeee7fd22550b467a76fa0c4a0ceae51b"
 
+vue-router:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.1.1.tgz#10c31bbdcb6da92bd3e0223fa12345e73018625a"
+
 vue-template-compiler@^2.0.0-alpha.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.1.8.tgz#12dd1cc63793f59be580c694a61610cb9369d629"

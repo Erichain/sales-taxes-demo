@@ -1,12 +1,16 @@
 // main entry
 import Vue from 'vue';
-import App from '../components/App.vue';
+import VueRouter from 'vue-router';
 import store from './vuex/store';
+import routes from './router';
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+    routes
+});
 
 new Vue({
-    store,
-    components: {
-        App
-    },
-    render: createElem => createElem(App)
+    router,
+    store
 }).$mount('#app');

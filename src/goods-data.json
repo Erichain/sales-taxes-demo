@@ -1,48 +1,56 @@
 [
     {
         "name": "Books",
+        "modelName": "book",
         "isImported": false,
         "price": 12.49,
         "isTaxed": false,
         "taxRate": 0
     }, {
         "name": "Music CD",
+        "modelName": "cd",
         "isImported": false,
         "price": 14.99,
         "isTaxed": true,
         "taxRate": 0.1
     }, {
         "name": "Chocolate Bar",
+        "modelName": "chbar",
         "isImported": false,
         "price": 0.85,
         "isTaxed": true,
         "taxRate": 0
     }, {
         "name": "Imported Box Of Chocolate",
+        "modelName": "imboxch",
         "isImported": true,
         "price": 10,
         "isTaxed": true,
         "taxRate": 0.05
     }, {
         "name": "Imported Bottle Of Perfume",
+        "modelName": "imperfume",
         "isImported": true,
         "price": 32.19,
         "isTaxed": true,
         "taxRate": 0.05
     }, {
         "name": "Bottle Of Perfume",
+        "modelName": "perfume",
         "isImported": false,
         "price": 20.89,
         "isTaxed": true,
         "taxRate": 0.1
     }, {
         "name": "Packet Of Headache Pills",
+        "modelName": "headpill",
         "isImported": false,
         "price": 9.75,
         "isTaxed": false,
         "taxRate": 0
     }, {
         "name": "Box Of Imported Chocolates",
+        "modelName": "imchbox",
         "isImported": true,
         "price": 11.25,
         "isTaxed": true,

@@ -1,9 +1,13 @@
 <template>
-    <table class="table">
-        <caption>
-            <h4>Cart</h4>
-        </caption>
-        <thead>
+    <div>
+        <router-link to="/goodslist"
+                     class="btn btn-danger btn-route"
+        >◁ Goods List</router-link>
+        <table class="table">
+            <caption>
+                <h4>Cart</h4>
+            </caption>
+            <thead>
             <tr>
                 <th>Goods Name</th>
                 <th>Quantity</th>
@@ -11,8 +15,8 @@
                 <th>Tax</th>
                 <th>Total Price</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr v-for="item in goodsData">
                 <td>{{ item.name }}</td>
                 <td>{{ item.price.toFixed(2) }}</td>
@@ -21,8 +25,9 @@
                     <button class="btn btn-primary">Add To Cart</button>
                 </td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script type="text/babel">
@@ -35,6 +40,12 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
+    @import "../styles/shared/variables";
+
+    .btn-route {
+        margin-bottom: 20px;
+    }
 
 </style>

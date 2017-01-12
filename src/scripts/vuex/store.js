@@ -10,7 +10,8 @@ import goodsData from '../../goods-data.json';
 Vue.use(Vuex);
 
 const state = {
-    goodsData
+    goodsData,
+    cartGoods: []
 };
 
 export default new Vuex.Store({

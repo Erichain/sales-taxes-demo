@@ -28,10 +28,14 @@
     "require-dir": "^0.3.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
+    "vue-router": "^2.1.1",
     "vueify": "^9.4.0"
   },
   "dependencies": {
     "vue": "^2.1.8",
     "vuex": "^2.1.1"
+  },
+  "browser": {
+    "vue": "vue/dist/vue.common"
   }
 }
