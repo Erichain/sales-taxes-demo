@@ -1,7 +1,8 @@
 <template>
     <div>
         <router-link to="/goodslist"
-                     class="btn btn-danger btn-route"
+                     class="btn btn-danger btn-lg margin-bottom
+                            btn-route no-text-decoration"
         >&lt;&nbsp;Goods List</router-link>
         <table class="table">
             <caption>
@@ -46,7 +47,7 @@
                 </tr>
             </tfoot>
         </table>
-        <button class="btn btn-danger float-right"
+        <button class="btn btn-danger btn-lg float-right"
                 @click="clearCart"
                 :disabled="cartGoods.length === 0"
         >Clear Cart</button>
@@ -67,7 +68,7 @@
         methods: {
             ...mapActions(['clearCart']),
 
-            // round the last digit to 5
+            // round the last digit up to 5
             roundValueUp(value) {
                 let stringedValue = parseFloat(value).toFixed(2),
                     lastNumber = parseFloat(stringedValue.slice(-1)),
@@ -116,11 +117,3 @@
     }
 
 </script>
-
-<style lang="scss" scoped>
-
-    .btn-route {
-        margin-bottom: 20px;
-    }
-
-</style>

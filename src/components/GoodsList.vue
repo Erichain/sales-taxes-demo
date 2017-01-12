@@ -9,7 +9,7 @@
                     <th>Goods Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                    <th>Summary</th>
+                    <th class="text-align-left">Summary</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,18 +29,24 @@
                                 :disabled="goodsCounts[item.goodsId] <= 0"
                         >—</button>
                     </td>
-                    <td>
+                    <td class="text-align-left">
                         <span class="text-size-lg text-primary">
                             {{ goodsCounts[item.goodsId] || 0 }}
                         </span>
-                        goods added!
+                        {{ item.name }}(s) Are Added To Cart.
                     </td>
                 </tr>
             </tbody>
         </table>
         <router-link to="/cart"
-                     class="btn btn-primary btn-route float-right"
+                     class="btn btn-primary btn-lg
+                            no-text-decoration float-right"
         >Checkout</router-link>
+        <button class="btn btn-danger btn-lg
+                       float-right margin-right"
+                @click="resetAllToZero"
+                :disabled="ifCanBeReset"
+        >Reset All To 0</button>
     </div>
 </template>
 
@@ -55,26 +61,40 @@
             ...mapGetters([
                 'goodsData',
                 'goodsCounts'
-            ])
+            ]),
+
+            ifCanBeReset() {
+                for (let key in this.goodsCounts) {
+                    if (this.goodsCounts[key] > 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
         },
 
         methods: {
             ...mapActions([
-                'addGoodsToCart',
+                'clearCart',
                 'initialGoodsCount',
                 'increaseGoodsCount',
                 'decreaseGoodsCount',
-                'enterGoodsCounts'
+                'updateGoodsCountEntered'
             ]),
 
             updateGoodsCountByEntering(event, goods) {
                 let instance = this;
                 setTimeout(function () {
-                    instance.enterGoodsCounts({
+                    instance.updateGoodsCountEntered({
                         count: event.target.value,
                         goods
                     });
                 }, 500);
+            },
+
+            resetAllToZero() {
+                this.clearCart();
+                this.initialGoodsCount();
             }
         },
 
@@ -82,9 +102,7 @@
             if (Object.keys(this.goodsCounts).length !== 0) {
                 return;
             }
-            for (let goods of this.goodsData) {
-                this.initialGoodsCount(goods.goodsId);
-            }
+            this.initialGoodsCount();
         }
     }
 

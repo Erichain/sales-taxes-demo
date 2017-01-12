@@ -9,6 +9,7 @@ $text-color-map:
                 (default, $text-default),
                 (primary, $text-primary),
                 (secondary, $text-secondary);
+$margin-maps: (top, right, bottom, left);
 
 html, body {
     width: 100%;
@@ -43,6 +44,12 @@ body {
     }
 }
 
+@each $margin in $margin-maps {
+    .margin-#{$margin} {
+        margin-#{$margin}: $margin-default;
+    }
+}
+
 .text-bold {
     font-weight: bold;
 }
@@ -57,4 +64,8 @@ body {
 
 .float-left {
     float: left;
+}
+
+.no-text-decoration {
+    text-decoration: none;
 }

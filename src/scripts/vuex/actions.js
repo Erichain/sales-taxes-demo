@@ -2,8 +2,8 @@
 import mutationTypes from './mutation-types';
 
 export default {
-    initialGoodsCount({ commit }, goodsId) {
-        commit(mutationTypes.INITIAL_GOODS_COUNT, goodsId);
+    initialGoodsCount({ commit }) {
+        commit(mutationTypes.INITIAL_GOODS_COUNT);
     },
 
     increaseGoodsCount({ commit }, goods) {
@@ -14,8 +14,8 @@ export default {
         commit(mutationTypes.DECREASE_GOODS_COUNT, goods);
     },
 
-    enterGoodsCounts({ commit }, { count, goods }) {
-        commit(mutationTypes.ENTER_GOODS_COUNT, { count, goods });
+    updateGoodsCountEntered({ commit }, { count, goods }) {
+        commit(mutationTypes.UPDATE_GOODS_COUNT_ENTERED, { count, goods });
     },
 
     clearCart({ commit }) {

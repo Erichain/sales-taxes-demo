@@ -4,6 +4,10 @@ $table-header-bg-color: #efefef;
 $border-width: 1px;
 $border-radius: 4px;
 $border-focus-color: #666666;
+$shadow-color: #aeaeae;
+
+$button-primary: #29aeff;
+$button-danger: #ff4e6c;
 
 // font
 $text-default: #444444;
@@ -13,10 +17,8 @@ $text-no-color: #ffffff;
 $text-size-default: 14px;
 $text-size-sm: 12px;
 
-$button-primary: #29aeff;
-$button-danger: #ff4e6c;
-
 // transition
 $transition-time-default: 0.4s;
 
-$shadow-color: #aeaeae;
+// margin
+$margin-default: 20px;

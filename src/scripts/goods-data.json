@@ -22,7 +22,7 @@
         "taxRate": 0
     }, {
         "goodsId": "0004",
-        "name": "Imported Box Of Chocolates",
+        "name": "Imported Box Of Chocolate",
         "isImported": true,
         "price": 10,
         "isTaxed": true,
@@ -50,10 +50,24 @@
         "taxRate": 0
     }, {
         "goodsId": "0008",
-        "name": "Box Of Imported Chocolates",
+        "name": "Box Of Imported Chocolate",
         "isImported": true,
         "price": 11.25,
         "isTaxed": true,
         "taxRate": 0.05
+    }, {
+        "goodsId": "0009",
+        "name": "Imported Bottle Of Perfume",
+        "isImported": true,
+        "price": 27.99,
+        "isTaxed": true,
+        "taxRate": 0.15
+    }, {
+        "goodsId": "0010",
+        "name": "Bottle Of Perfume",
+        "isImported": true,
+        "price": 18.99,
+        "isTaxed": true,
+        "taxRate": 0.1
     }
 ]
