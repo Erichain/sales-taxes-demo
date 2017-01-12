@@ -1,3 +1,6 @@
+// base classes
+$text-aligns: right, left, center;
+
 html, body {
     width: 100%;
     font-family: Helvetica, sans-serif;
@@ -5,4 +8,36 @@ html, body {
 
 body {
     padding: 40px;
+}
+
+// set text alignment
+// add !important to force set styles
+@each $align in $text-aligns {
+    .text-align-#{$align} {
+        text-align: $align !important;
+    }
+}
+
+.text-secondary {
+    color: $text-secondary;
+}
+
+.text-primary {
+    color: $text-primary;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-normal {
+    font-weight: normal;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
 }
