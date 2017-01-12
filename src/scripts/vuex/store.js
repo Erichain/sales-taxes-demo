@@ -11,7 +11,8 @@ Vue.use(Vuex);
 
 const state = {
     goodsData,
-    cartGoods: []
+    cartGoods: [],
+    goodsCounts: {}
 };
 
 export default new Vuex.Store({

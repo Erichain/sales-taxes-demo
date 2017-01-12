@@ -11,8 +11,8 @@
                 <tr>
                     <th>Goods Name</th>
                     <th>Quantity</th>
-                    <th>Origin Price</th>
                     <th>Tax</th>
+                    <th>Origin Price</th>
                     <th>Total Price</th>
                 </tr>
             </thead>
@@ -22,10 +22,10 @@
                 >
                     <tr v-if="item.quantity !== 0">
                         <td>{{ item.name }}</td>
-                        <td>{{ item.price.toFixed(2) }}</td>
-                        <td>{{ 43343 }}</td>
-                        <td>{{ 947394 }}</td>
-                        <td>{{ 23232 }}</td>
+                        <td>{{ item.count }}</td>
+                        <td>{{ getTaxes(item) | toFix }}</td>
+                        <td>{{ getOriginalPrice(item) | toFix }}</td>
+                        <td>{{ getPriceWithTax(item) | toFix }}</td>
                     </tr>
                 </template>
                 <template v-if="cartGoods.length === 0">
@@ -40,9 +40,9 @@
                 <tr class="text-bold">
                     <td>Receipt</td>
                     <td>Sales Taxes:</td>
-                    <td>{{ 232 }}</td>
+                    <td>{{ cartGoods.length === 0 ? '0.00' : getTotalTaxes() | toFix }}</td>
                     <td>Total:</td>
-                    <td>{{ 2434 }}</td>
+                    <td>{{ cartGoods.length === 0 ? '0.00' : getTotalPrices() | toFix }}</td>
                 </tr>
             </tfoot>
         </table>
@@ -54,12 +54,41 @@
     import { mapGetters } from 'vuex';
 
     export default {
-        data() {
-            return {};
-        },
+        name: 'cart',
 
         computed: {
             ...mapGetters(['cartGoods'])
+        },
+
+        methods: {
+            getOriginalPrice(item) {
+                return item.count * item.price;
+            },
+
+            getTaxes(item) {
+                if (!item.isTaxed) {
+                    return 0;
+                }
+                return item.taxRate * item.price * item.count;
+            },
+
+            getPriceWithTax(item) {
+                return this.getOriginalPrice(item) + this.getTaxes(item);
+            },
+
+            getTotalTaxes() {
+                let instance = this;
+                return this.cartGoods.reduce(function (prev, curr) {
+                    return prev + instance.getTaxes(curr);
+                }, 0);
+            },
+
+            getTotalPrices() {
+                let instance = this;
+                return this.cartGoods.reduce(function (prev, curr) {
+                    return prev + instance.getPriceWithTax(curr);
+                }, 0);
+            }
         }
     }
 

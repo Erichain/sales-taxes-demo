@@ -18,18 +18,21 @@
                     <td>{{ item.price.toFixed(2) }}</td>
                     <td>
                         <button class="btn btn-primary btn-accumulator"
-                                @click="increaseGoodsCount(item.modelName)"
+                                @click="increaseGoodsCount(item.goodsNum)"
                         >+</button>
                         <input class="form-input input-sm"
-                               v-model="cart[item.modelName]"
+                               :value="goodsCounts[item.goodsNum]"
+                               @input="updateGoodsCountByEntering($event, item.goodsNum)"
                         >
                         <button class="btn btn-danger btn-accumulator"
-                                @click="decreaseGoodsCount"
+                                @click="decreaseGoodsCount(item.goodsNum)"
+                                :disabled="goodsCounts[item.goodsNum] <= 0"
                         >—</button>
                     </td>
                     <td>
                         <button class="btn btn-primary"
                                 @click="addGoodsToCart(item)"
+                                :disabled="goodsCounts[item.goodsNum] <= 0"
                         >Add To Cart</button>
                     </td>
                 </tr>
@@ -46,30 +49,36 @@
     import { mapGetters, mapActions } from 'vuex';
 
     export default {
-        data() {
-            return {
-                cart: {
-                    book: 0
-                }
-            };
-        },
+        name: 'goods-list',
 
         computed: {
-            ...mapGetters(['goodsData'])
+            ...mapGetters([
+                'goodsData',
+                'goodsCounts'
+            ])
         },
 
         methods: {
-            ...mapActions(['addGoodsToCart']),
-            increaseGoodsCount(model) {
-                console.log(model)
-                console.log(this.cart[model])
-                if (typeof this.cart[model] === 'undefined') {
-                    this.cart[model] = 0;
-                }
-                this.cart[model]++;
-            },
+            ...mapActions([
+                'addGoodsToCart',
+                'initialGoodsCount',
+                'increaseGoodsCount',
+                'decreaseGoodsCount',
+                'enterGoodsCounts'
+            ]),
 
-            decreaseGoodsCount() {}
+            updateGoodsCountByEntering(event, goodsNum) {
+                this.enterGoodsCounts({
+                    count: event.target.value,
+                    goodsNum
+                });
+            }
+        },
+
+        created() {
+            for (let goods of this.goodsData) {
+                this.initialGoodsCount(goods.goodsNum);
+            }
         }
     }
 
