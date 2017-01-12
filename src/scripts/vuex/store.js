@@ -4,7 +4,6 @@ import Vuex from 'vuex';
 import mutations from './mutations';
 import getters from './getters';
 import actions from './actions';
-
 import goodsData from '../../goods-data.json';
 
 Vue.use(Vuex);
@@ -12,6 +11,9 @@ Vue.use(Vuex);
 const state = {
     goodsData,
     cartGoods: [],
+
+    // this attribute is used to save every goods' count
+    // through its goods number
     goodsCounts: {}
 };
 

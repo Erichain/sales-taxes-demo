@@ -1,55 +1,55 @@
 [
     {
-        "goodsNum": "0001",
-        "name": "Books",
+        "goodsId": "0001",
+        "name": "Book",
         "isImported": false,
         "price": 12.49,
         "isTaxed": false,
         "taxRate": 0
     }, {
-        "goodsNum": "0002",
+        "goodsId": "0002",
         "name": "Music CD",
         "isImported": false,
         "price": 14.99,
         "isTaxed": true,
         "taxRate": 0.1
     }, {
-        "goodsNum": "0003",
+        "goodsId": "0003",
         "name": "Chocolate Bar",
         "isImported": false,
         "price": 0.85,
-        "isTaxed": true,
+        "isTaxed": false,
         "taxRate": 0
     }, {
-        "goodsNum": "0004",
-        "name": "Imported Box Of Chocolate",
+        "goodsId": "0004",
+        "name": "Imported Box Of Chocolates",
         "isImported": true,
         "price": 10,
         "isTaxed": true,
         "taxRate": 0.05
     }, {
-        "goodsNum": "0005",
+        "goodsId": "0005",
         "name": "Imported Bottle Of Perfume",
         "isImported": true,
-        "price": 32.19,
+        "price": 47.5,
         "isTaxed": true,
-        "taxRate": 0.05
+        "taxRate": 0.15
     }, {
-        "goodsNum": "0006",
+        "goodsId": "0006",
         "name": "Bottle Of Perfume",
         "isImported": false,
         "price": 20.89,
         "isTaxed": true,
         "taxRate": 0.1
     }, {
-        "goodsNum": "0007",
+        "goodsId": "0007",
         "name": "Packet Of Headache Pills",
         "isImported": false,
         "price": 9.75,
         "isTaxed": false,
         "taxRate": 0
     }, {
-        "goodsNum": "0008",
+        "goodsId": "0008",
         "name": "Box Of Imported Chocolates",
         "isImported": true,
         "price": 11.25,

@@ -5,6 +5,7 @@
     background: transparent;
     border: $border-width solid $border-color;
     border-collapse: collapse;
+    table-layout: fixed;
 
     caption {
         margin: 10px 0;
@@ -22,7 +23,7 @@
         td,
         th {
             padding: 12px;
-            color: $text-primary;
+            color: $text-default;
             text-align: center;
             vertical-align: middle;
             border-top: $border-width solid $border-color;

@@ -9,31 +9,31 @@
                     <th>Goods Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                    <th>Action</th>
+                    <th>Summary</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="item in goodsData">
                     <td>{{ item.name }}</td>
-                    <td>{{ item.price.toFixed(2) }}</td>
+                    <td>{{ item.price | toFix }}</td>
                     <td>
                         <button class="btn btn-primary btn-accumulator"
-                                @click="increaseGoodsCount(item.goodsNum)"
+                                @click="increaseGoodsCount(item)"
                         >+</button>
-                        <input class="form-input input-sm"
-                               :value="goodsCounts[item.goodsNum]"
-                               @input="updateGoodsCountByEntering($event, item.goodsNum)"
+                        <input class="form-input input-sm text-align-center"
+                               :value="goodsCounts[item.goodsId]"
+                               @input="updateGoodsCountByEntering($event, item)"
                         >
                         <button class="btn btn-danger btn-accumulator"
-                                @click="decreaseGoodsCount(item.goodsNum)"
-                                :disabled="goodsCounts[item.goodsNum] <= 0"
+                                @click="decreaseGoodsCount(item)"
+                                :disabled="goodsCounts[item.goodsId] <= 0"
                         >—</button>
                     </td>
                     <td>
-                        <button class="btn btn-primary"
-                                @click="addGoodsToCart(item)"
-                                :disabled="goodsCounts[item.goodsNum] <= 0"
-                        >Add To Cart</button>
+                        <span class="text-size-lg text-primary">
+                            {{ goodsCounts[item.goodsId] || 0 }}
+                        </span>
+                        goods added!
                     </td>
                 </tr>
             </tbody>
@@ -67,17 +67,23 @@
                 'enterGoodsCounts'
             ]),
 
-            updateGoodsCountByEntering(event, goodsNum) {
-                this.enterGoodsCounts({
-                    count: event.target.value,
-                    goodsNum
-                });
+            updateGoodsCountByEntering(event, goods) {
+                let instance = this;
+                setTimeout(function () {
+                    instance.enterGoodsCounts({
+                        count: event.target.value,
+                        goods
+                    });
+                }, 500);
             }
         },
 
         created() {
+            if (Object.keys(this.goodsCounts).length !== 0) {
+                return;
+            }
             for (let goods of this.goodsData) {
-                this.initialGoodsCount(goods.goodsNum);
+                this.initialGoodsCount(goods.goodsId);
             }
         }
     }

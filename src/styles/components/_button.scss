@@ -34,6 +34,7 @@
     &.btn-accumulator {
         @include square-size(30px);
         padding: 0;
+        vertical-align: 1px;
     }
 
     &-route {

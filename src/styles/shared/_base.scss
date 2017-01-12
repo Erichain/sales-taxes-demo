@@ -1,5 +1,14 @@
 // base classes
 $text-aligns: right, left, center;
+$text-size-map:
+                (sm, 12px),
+                (nm, 14px),
+                (md, 16px),
+                (lg, 18px);
+$text-color-map:
+                (default, $text-default),
+                (primary, $text-primary),
+                (secondary, $text-secondary);
 
 html, body {
     width: 100%;
@@ -10,20 +19,28 @@ body {
     padding: 40px;
 }
 
+// set text color
+// add !important to force set
+@each $color-name, $color in $text-color-map {
+    .text-#{$color-name} {
+        color: $color !important;
+    }
+}
+
+// set text size
+// add !important to force set
+@each $size-name, $size in $text-size-map {
+    .text-size-#{$size-name} {
+        font-size: $size !important;
+    }
+}
+
 // set text alignment
-// add !important to force set styles
+// add !important to force set
 @each $align in $text-aligns {
     .text-align-#{$align} {
         text-align: $align !important;
     }
-}
-
-.text-secondary {
-    color: $text-secondary;
-}
-
-.text-primary {
-    color: $text-primary;
 }
 
 .text-bold {

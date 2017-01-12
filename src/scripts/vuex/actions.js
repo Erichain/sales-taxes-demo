@@ -2,23 +2,23 @@
 import mutationTypes from './mutation-types';
 
 export default {
-    initialGoodsCount({ commit }, goodsNum) {
-        commit(mutationTypes.INITIAL_GOODS_COUNT, goodsNum);
+    initialGoodsCount({ commit }, goodsId) {
+        commit(mutationTypes.INITIAL_GOODS_COUNT, goodsId);
     },
 
-    addGoodsToCart({ commit }, goods) {
-        commit(mutationTypes.ADD_GOODS_TO_CART, goods);
+    increaseGoodsCount({ commit }, goods) {
+        commit(mutationTypes.INCREASE_GOODS_COUNT, goods);
     },
 
-    increaseGoodsCount({ commit }, goodsNum) {
-        commit(mutationTypes.INCREASE_GOODS_COUNT, goodsNum);
+    decreaseGoodsCount({ commit }, goods) {
+        commit(mutationTypes.DECREASE_GOODS_COUNT, goods);
     },
 
-    decreaseGoodsCount({ commit }, goodsNum) {
-        commit(mutationTypes.DECREASE_GOODS_COUNT, goodsNum);
+    enterGoodsCounts({ commit }, { count, goods }) {
+        commit(mutationTypes.ENTER_GOODS_COUNT, { count, goods });
     },
 
-    enterGoodsCounts({ commit }, { count, goodsNum }) {
-        commit(mutationTypes.ENTER_GOODS_COUNT, { count, goodsNum });
+    clearCart({ commit }) {
+        commit(mutationTypes.CLEAR_CART);
     }
 };

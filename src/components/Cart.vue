@@ -2,7 +2,7 @@
     <div>
         <router-link to="/goodslist"
                      class="btn btn-danger btn-route"
-        >◁ Goods List</router-link>
+        >&lt;&nbsp;Goods List</router-link>
         <table class="table">
             <caption>
                 <h4>Cart</h4>
@@ -42,16 +42,20 @@
                     <td>Sales Taxes:</td>
                     <td>{{ cartGoods.length === 0 ? '0.00' : getTotalTaxes() | toFix }}</td>
                     <td>Total:</td>
-                    <td>{{ cartGoods.length === 0 ? '0.00' : getTotalPrices() | toFix }}</td>
+                    <td>{{ cartGoods.length === 0 ? '0.00' : getTotalPrice() | toFix }}</td>
                 </tr>
             </tfoot>
         </table>
+        <button class="btn btn-danger float-right"
+                @click="clearCart"
+                :disabled="cartGoods.length === 0"
+        >Clear Cart</button>
     </div>
 </template>
 
 <script type="text/babel">
 
-    import { mapGetters } from 'vuex';
+    import { mapGetters, mapActions } from 'vuex';
 
     export default {
         name: 'cart',
@@ -61,6 +65,22 @@
         },
 
         methods: {
+            ...mapActions(['clearCart']),
+
+            // round the last digit to 5
+            roundValueUp(value) {
+                let stringedValue = parseFloat(value).toFixed(2),
+                    lastNumber = parseFloat(stringedValue.slice(-1)),
+                    len = stringedValue.length;
+                if (lastNumber > 0 && lastNumber < 5) {
+                    lastNumber = 5;
+                    return parseFloat(
+                        stringedValue.slice(0, len - 1) + lastNumber
+                    );
+                }
+                return value;
+            },
+
             getOriginalPrice(item) {
                 return item.count * item.price;
             },
@@ -69,11 +89,14 @@
                 if (!item.isTaxed) {
                     return 0;
                 }
-                return item.taxRate * item.price * item.count;
+                return this.roundValueUp(
+                    item.taxRate * item.price * item.count
+                );
             },
 
             getPriceWithTax(item) {
-                return this.getOriginalPrice(item) + this.getTaxes(item);
+                let value = this.getOriginalPrice(item) + this.getTaxes(item);
+                return this.roundValueUp(value);
             },
 
             getTotalTaxes() {
@@ -83,7 +106,7 @@
                 }, 0);
             },
 
-            getTotalPrices() {
+            getTotalPrice() {
                 let instance = this;
                 return this.cartGoods.reduce(function (prev, curr) {
                     return prev + instance.getPriceWithTax(curr);
@@ -96,14 +119,8 @@
 
 <style lang="scss" scoped>
 
-    @import "../styles/shared/variables";
-
     .btn-route {
         margin-bottom: 20px;
-    }
-
-    .receipt-summary {
-        font-weight: bold;
     }
 
 </style>
