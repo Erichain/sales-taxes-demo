@@ -5,6 +5,7 @@ body {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
+    box-sizing: border-box;
 
     * {
         outline: none;
@@ -22,7 +23,6 @@ header,
 footer,
 section,
 nav,
-table,
 figure,
 figcaption,
 main,

@@ -1,0 +1,9 @@
+// mixins
+@mixin settransition($time: $transition-time-default) {
+    transition: all $time ease-in-out;
+}
+
+@mixin square-size($size) {
+    width: $size;
+    height: $size;
+}

@@ -1,3 +1,26 @@
-button {
+.btn {
+    padding: 8px 15px;
+    font-size: $text-size-sm;
+    color: $text-no-color;
     border: none;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 4px $shadow-color;
+    @include settransition;
+
+    &.btn-primary {
+        background: $button-primary;
+    }
+
+    &.btn-danger {
+        background: $button-danger;
+    }
+
+    &.btn-accumulator {
+        @include square-size(30px);
+        padding: 0;
+    }
+
+    &:hover {
+        box-shadow: 0 4px 12px $shadow-color;
+    }
 }

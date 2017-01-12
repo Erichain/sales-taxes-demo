@@ -2,7 +2,9 @@
 @import "shared/variables";
 @import "shared/reset";
 @import "shared/base";
+@import "shared/mixins";
 
 // components
 @import "components/button";
 @import "components/table";
+@import "components/input";

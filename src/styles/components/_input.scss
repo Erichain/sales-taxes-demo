@@ -1,0 +1,19 @@
+.form-input {
+    display: inline-block;
+    padding: 0 8px;
+    font-size: $text-size-default;
+    line-height: 30px;
+    color: $text-primary;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    @include settransition;
+
+    &.input-sm {
+        width: 100px;
+        height: 30px;
+    }
+
+    &:focus {
+        border-color: $border-focus-color;
+    }
+}

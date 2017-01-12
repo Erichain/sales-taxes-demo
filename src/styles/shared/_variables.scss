@@ -1,11 +1,21 @@
 // variables
-$border-color: #eeeeee;
-$table-header-bg-color: #c0c0c0;
+$border-color: #e1e1e1;
+$table-header-bg-color: #efefef;
 $border-width: 1px;
+$border-radius: 4px;
+$border-focus-color: #666666;
 
+// font
 $text-primary: #333333;
 $text-secondary: #aaaaaa;
 $text-no-color: #ffffff;
+$text-size-default: 14px;
+$text-size-sm: 12px;
 
 $button-primary: #29aeff;
 $button-danger: #ff4e6c;
+
+// transition
+$transition-time-default: 0.4s;
+
+$shadow-color: #aeaeae;

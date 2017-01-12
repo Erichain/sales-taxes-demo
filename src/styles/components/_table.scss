@@ -1,13 +1,37 @@
 // table's styles
-table {
-    display: block;
+.table {
     width: 100%;
+    margin-bottom: 40px;
+    background: transparent;
     border: $border-width solid $border-color;
     border-collapse: collapse;
 
+    caption {
+        margin: 10px 0;
+        color: $text-secondary;
+        text-align: left;
+
+        h4 {
+            font-weight: 400;
+        }
+    }
+
     tr {
-        td {
-            border: $border-width solid $border-color;
+        width: 100%;
+
+        td,
+        th {
+            padding: 12px;
+            color: $text-primary;
+            text-align: center;
+            vertical-align: middle;
+            border-top: $border-width solid $border-color;
+            border-bottom: $border-width solid $border-color;
+        }
+
+        th {
+            font-weight: bold;
+            background: $table-header-bg-color;
         }
     }
 }

@@ -1,7 +1,7 @@
 <template>
     <div>
-        <cart></cart>
         <goods-list></goods-list>
+        <cart></cart>
     </div>
 </template>
 
@@ -18,11 +18,3 @@
     }
 
 </script>
-
-<style lang="scss">
-
-    input {
-        border: 1px solid red;
-    }
-
-</style>
