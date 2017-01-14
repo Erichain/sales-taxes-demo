@@ -1,0 +1,103 @@
+{
+    "choose1": {
+        "initialData": [{
+            "goodsId": "0001",
+            "name": "Book",
+            "isImported": false,
+            "price": 12.49,
+            "isTaxed": false,
+            "taxRate": 0,
+            "count": 1
+        }, {
+            "goodsId": "0002",
+            "name": "Music CD",
+            "isImported": false,
+            "price": 14.99,
+            "isTaxed": true,
+            "taxRate": 0.1,
+            "count": 1
+        }, {
+            "goodsId": "0003",
+            "name": "Chocolate Bar",
+            "isImported": false,
+            "price": 0.85,
+            "isTaxed": false,
+            "taxRate": 0,
+            "count": 1
+        }],
+
+        "result": {
+            "prices": [12.49, 16.49, 0.85],
+            "taxes": 1.5,
+            "total": 29.83
+        }
+    },
+
+    "choose2": {
+        "initialData": [{
+            "goodsId": "0004",
+            "name": "Imported Box Of Chocolate",
+            "isImported": true,
+            "price": 10,
+            "isTaxed": true,
+            "taxRate": 0.05,
+            "count": 1
+        }, {
+            "goodsId": "0005",
+            "name": "Imported Bottle Of Perfume",
+            "isImported": true,
+            "price": 47.5,
+            "isTaxed": true,
+            "taxRate": 0.15,
+            "count": 1
+        }],
+
+        "result": {
+            "prices": [10.5, 54.65],
+            "taxes": 7.65,
+            "total": 65.15
+        }
+    },
+
+    "choose3": {
+        "initialData": [{
+            "goodsId": "0009",
+            "name": "Imported Bottle Of Perfume",
+            "isImported": true,
+            "price": 27.99,
+            "isTaxed": true,
+            "taxRate": 0.15,
+            "count": 1
+        }, {
+            "goodsId": "0010",
+            "name": "Bottle Of Perfume",
+            "isImported": true,
+            "price": 18.99,
+            "isTaxed": true,
+            "taxRate": 0.1,
+            "count": 1
+        }, {
+            "goodsId": "0007",
+            "name": "Packet Of Headache Pills",
+            "isImported": false,
+            "price": 9.75,
+            "isTaxed": false,
+            "taxRate": 0,
+            "count": 1
+        }, {
+            "goodsId": "0008",
+            "name": "Box Of Imported Chocolate",
+            "isImported": true,
+            "price": 11.25,
+            "isTaxed": true,
+            "taxRate": 0.05,
+            "count": 1
+        }],
+
+        "result": {
+            "prices": [32.19, 20.89, 9.75, 11.85],
+            "taxes": 6.7,
+            "total": 74.68
+        }
+    }
+}

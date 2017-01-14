@@ -85,8 +85,14 @@
             updateGoodsCountByEntering(event, goods) {
                 let instance = this;
                 setTimeout(function () {
+                    let count = parseInt(event.target.value || 0, 10);
+
+                    if (!count || count <= 0) {
+                        count = 0;
+                    }
+
                     instance.updateGoodsCountEntered({
-                        count: parseInt(event.target.value || 0, 10),
+                        count,
                         goods
                     });
                 }, 500);

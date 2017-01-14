@@ -21,7 +21,7 @@
                 <template v-for="item in cartGoods"
                           v-if="cartGoods.length !== 0"
                 >
-                    <tr v-if="item.quantity !== 0">
+                    <tr v-if="item.count !== 0">
                         <td>{{ item.name }}</td>
                         <td>{{ item.count }}</td>
                         <td>{{ getTaxes(item) | toFix }}</td>

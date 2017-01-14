@@ -17,19 +17,9 @@ export default {
     [mutationTypes.INCREASE_GOODS_COUNT](state, goods) {
         state.goodsCounts[goods.goodsId]++;
         goods.count = state.goodsCounts[goods.goodsId];
-
-        // if cart already has the goods
-        // just increase its count
-        if (state.cartGoods.indexOf(goods) > -1) {
-            return;
-        }
-        state.cartGoods.push(goods);
     },
 
     [mutationTypes.DECREASE_GOODS_COUNT](state, goods) {
-        if (!goods.count || goods.count === 0) {
-            return;
-        }
         state.goodsCounts[goods.goodsId]--;
         goods.count = state.goodsCounts[goods.goodsId];
     },
@@ -38,14 +28,21 @@ export default {
     [mutationTypes.UPDATE_GOODS_COUNT_ENTERED](state, { count, goods }) {
         state.goodsCounts[goods.goodsId] = count;
         goods.count = count;
-        if (state.cartGoods.indexOf(goods) > -1) {
-            return;
-        }
-        state.cartGoods.push(goods);
     },
 
     [mutationTypes.CLEAR_CART](state) {
         state.cartGoods = [];
         state.goodsCounts = {};
+    },
+
+    [mutationTypes.ADD_GOODS_TO_CART](state, goods) {
+        state.cartGoods.push(goods);
+    },
+
+    [mutationTypes.REMOVE_CART_GOODS](state, goods) {
+        state.cartGoods.splice(
+            state.cartGoods.indexOf(goods),
+            1
+        );
     }
 };
