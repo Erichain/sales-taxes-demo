@@ -104,6 +104,6 @@
             }
             this.initialGoodsCount();
         }
-    }
+    };
 
 </script>

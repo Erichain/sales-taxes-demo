@@ -12,7 +12,7 @@ const state = {
     goodsData,
     cartGoods: [],
 
-    // this attribute is used to save every goods' count
+    // this attribute is used to save the goods' count
     // through its goods number
     goodsCounts: {}
 };

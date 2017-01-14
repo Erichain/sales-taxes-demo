@@ -83,7 +83,7 @@
             },
 
             getOriginalPrice(item) {
-                return item.count * item.price;
+                return this.roundValueUp(item.count * item.price);
             },
 
             getTaxes(item) {
@@ -114,6 +114,6 @@
                 }, 0);
             }
         }
-    }
+    };
 
 </script>
