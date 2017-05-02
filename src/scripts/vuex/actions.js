@@ -1,9 +1,17 @@
 // actions
 import mutationTypes from './mutation-types';
+import Vue from 'vue';
 
 export default {
-    initialGoodsCount({ commit }) {
-        commit(mutationTypes.INITIAL_GOODS_COUNT);
+    // initialize goods counts to 0
+    initialGoodsCount({ state }) {
+        for (let goods of state.goodsData) {
+            Vue.set(
+                state.goodsCounts,
+                goods.goodsId,
+                0
+            );
+        }
     },
 
     increaseGoodsCount({ commit, state }, goods) {
@@ -19,8 +27,10 @@ export default {
     decreaseGoodsCount({ commit }, goods) {
         commit(mutationTypes.DECREASE_GOODS_COUNT, goods);
         if (goods.count <= 0) {
-            commit(mutationTypes.REMOVE_CART_GOODS, goods);
-            return;
+            state.cartGoods.splice(
+                state.cartGoods.indexOf(goods),
+                1
+            );
         }
     },
 
